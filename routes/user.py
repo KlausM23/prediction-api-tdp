@@ -99,4 +99,4 @@ def create_data(user: User):
 
     posts.append(new_method)
     print(new_method)
-    return "Data saved"
+    return new_method
