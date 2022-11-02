@@ -1,7 +1,7 @@
 import imp
 from fastapi import FastAPI
-from routes.user import user
+from routes.prediction import prediction
 
 app = FastAPI()
 
-app.include_router(user)
+app.include_router(prediction)
