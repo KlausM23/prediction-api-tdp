@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class User(BaseModel):
+class Prediction(BaseModel):
     hash2 : Optional[float]
     hash : Optional[str]
     id : int
