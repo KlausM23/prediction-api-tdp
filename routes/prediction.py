@@ -20,6 +20,16 @@ import joblib
 
 prediction = APIRouter()
 
+posts = []
+
+@prediction.get("/prediction/{id_pre}")
+def get_data_id(id_pre : int):
+    for post in posts:
+        if post["id"] == id_pre:
+            return post
+
+    return "Id not found"
+
 @prediction.post("/")
 def create_data(prediction: Prediction):
     mnb = joblib.load('routes/Naive-bayes-multiclasses.pkl')
@@ -81,6 +91,6 @@ def create_data(prediction: Prediction):
       'robo agravado':str(round(aux[0][5], 3)), 
       'prediction':result1
       }
-
+    posts.append(new_method)
     print(new_method)
     return new_method
