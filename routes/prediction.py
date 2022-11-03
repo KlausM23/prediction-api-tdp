@@ -22,8 +22,12 @@ prediction = APIRouter()
 
 posts = []
 
+@prediction.get("/prediction")
+def get_prediction():
+    return posts
+
 @prediction.get("/prediction/{id_pre}")
-def get_data_id(id_pre : int):
+def get_prediction_id(id_pre : int):
     for post in posts:
         if post["id"] == id_pre:
             return post
